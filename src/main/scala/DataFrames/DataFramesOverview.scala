@@ -18,16 +18,12 @@ object App {
     val df = spark.read.option("header","true").option("inferSchema","true").csv("src/main/scala/DataFrames/CitiGroup2006_2008.csv")
 
     // First 5 lines
-    for(line <- df.head(5)){
-      println(line)
-    }
+    df.head(5).foreach(println)
 
     println("\n")
 
     // Get column names
-    for(line <- df.columns){
-      println(line)
-    }
+    df.columns.foreach(println)
 
     println("\n")
 
@@ -35,7 +31,7 @@ object App {
     df.printSchema()
 
     // Describe DataFrame Numerical Columns
-    df.describe()
+    df.describe().show()
 
     // Select columns .transform().action()
     df.select("Volume").show()
