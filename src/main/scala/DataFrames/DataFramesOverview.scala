@@ -5,7 +5,7 @@ import org.apache.spark.sql.SparkSession
 
 // Optional: Use the following code below to set the Error reporting
 
-object App {
+object DataFramesOverview {
   def main(args : Array[String]) {
     Logger.getLogger("org").setLevel(Level.ERROR)
 
