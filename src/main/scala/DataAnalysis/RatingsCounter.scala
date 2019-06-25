@@ -19,7 +19,7 @@ object RatingsCounter {
 
     // Convert each line to a string, split it out by tabs, and extract the third field.
     // (The file format is userID, movieID, rating, timestamp)
-    val ratings = lines.map(x => x.toString().split("\t")(2))
+    val ratings = lines.map(_.toString().split("\t")(2))
 
     // Count up how many times each value (rating) occurs
     val results = ratings.countByValue()
